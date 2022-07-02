@@ -1,0 +1,35 @@
+ALGORITHM SomDistinct
+VAR
+ somme:INTEGER:=0;
+ i:INTEGER;
+ j:INTEGER:=0;
+ tab1:ARRAY_OF INTEGER[3];
+ tab2:ARRAY_OF INTEGER[4];
+  //[3, 1, 7, 9], Jeu 2 : [2, 4, 1, 9, 3]
+BEGIN
+tab1:={3, 1, 7, 9};
+tab2:={2, 4, 1, 9, 3};
+FOR i FROM 0 TO 3 STEP 1  DO
+    WHILE (tab1[i]<>tab2[j]) DO
+        j:=j+1;
+    END_WHILE
+    IF (j>4) THEN
+        somme:=somme+tab1[i];
+    END_IF
+
+END_FOR
+
+FOR j FROM 0 TO 4 STEP 1  DO
+    WHILE (tab1[i]<>tab2[j]) DO
+        i:=i+1;
+    END_WHILE
+    IF (i>3) THEN
+        somme:=somme+tab2[j];
+    END_IF
+
+END_FOR
+Write("La somme des elements distincts est ",somme);
+
+
+END
+
