@@ -1,0 +1,22 @@
+ALGORITHM algorithm_phrase
+VAR
+    nbre_mot:INTEGER:=0;
+    nbre_voyel:INTEGER:=0;
+    phrase:STRING:="";
+    str1:STRING;
+BEGIN
+     Write("Entrer la phrase caractère par caractère et taper . pour terminer");
+     Read(str1); 
+     WHILE (str1<>'.') DO
+     IF (str1=' ') THEN
+         nbre_mot:=nbre_mot+1;
+     ELSE_IF ((str1='i')OR(str1='u')OR(str1='o')OR(str1='a')OR(str1='e')) THEN
+         nbre_voyel:=nbre_voyel+1;
+     
+     END_IF
+         phrase=phrase.Concat('str1');
+         Read(str1);
+     END_WHILE
+      Write("La phrase est :",phrase);
+       Write("Elle contient ",nbre_mot,"mots et " ,nbre_voyel," voyelles");
+END
